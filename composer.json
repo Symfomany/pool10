@@ -1,0 +1,8 @@
+{
+    "require": {
+        "symfony/var-dumper": "^3.1",
+        "filp/whoops": "^2.1",
+        "anahkiasen/underscore-php": "^2.0",
+        "nesbot/carbon": "^1.21"
+    }
+}
