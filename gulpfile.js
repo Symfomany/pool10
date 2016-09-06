@@ -20,6 +20,7 @@ var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
+var gulpTypings = require("gulp-typings");
 
 // Browser-sync task, only cares about compiled CSS
 gulp.task('browser-sync', function() {
@@ -58,9 +59,14 @@ gulp.task('js', function() {
        .pipe(reload({stream:true}));
 });
 
+gulp.task("installTypings",function(){
+    var stream = gulp.src("./typings.json")
+        .pipe(gulpTypings()); //will install all typingsfiles in pipeline.
+    return stream; // by returning stream gulp can listen to events from the stream and knows when it is finished.
+});
 
 // Default task to be run with `gulp`
-gulp.task('default', ['js', 'browser-sync'], function () {
-    gulp.watch(["./lib/*.ts"], ['js']);
+gulp.task('default', ['installTypings', 'js', 'browser-sync'], function () {
+    gulp.watch(["./lib/*.ts"], [ 'installTypings', 'js']);
     gulp.watch(["*.html"]).on('change', browserSync.reload); //reload on HTML
 });

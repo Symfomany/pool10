@@ -3,9 +3,9 @@
 		"lib/boot.ts"
 	],
 	"compilerOptions": {
-		"target": "ES5",
-		"pretty" : true,
+		"target": "ES6",
     "moduleResolution": "node",
-		"module": "commonjs"
+		"module": "commonjs",
+		"noImplicitAny": true
 	}
 }
