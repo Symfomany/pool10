@@ -33,10 +33,10 @@ class Connexion{
     //1er argument: chaine (DSN) host:serveur;dbName : nom de la base
     $this->bdd = new PDO('mysql:host='.$host.';dbname='.$dbName, $login, $password);
   }
-
-
   
-
+  public function getPdo(){
+    return new PDO('mysql:host=localhost;dbname=testl10;charset=utf8', 'root', 'djscrave');
+  }
 
 /**
  * Getters
