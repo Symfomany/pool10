@@ -56,8 +56,15 @@
        <?php
        if (isset($_POST['button'])) {
          $resultat = $image->upload($_FILES);
-         if (isset($resultat['name'])) { ?>
-           <img src="image/<?php echo $resultat['name'] ?>"  />
+         if (isset($resultat['name'])) {
+           $imgThumb = $image->render("image/".$resultat['name']);
+            ?>
+           <div class="row">
+             <div class="col-xs-6 col-md-3">
+               <img src="image/img-thumbs.jpg"  />
+             </div>
+           </div>
+
          <?php } else{ ?>
             <div class="alert alert-danger">
                 <?php echo $resultat[0]; ?>

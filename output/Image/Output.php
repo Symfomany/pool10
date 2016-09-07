@@ -18,10 +18,11 @@ class Output
     // create an image manager instance with favored driver
     $manager = new ImageManager(array('driver' => 'gd'));
 
-    $image = $manager->make($image)->resize(null, 800, function ($constraint) {
+    $image = $manager->make($image)->resize(null, 200, function ($constraint) {
       $constraint->aspectRatio();
     })->greyscale();
-    $image->save('image/hollande-thumbs.jpg');
+    $image->save('image/img-thumbs.jpg');
+    return $image;
   }
 
 
@@ -34,9 +35,7 @@ class Output
     $file = new \Upload\File('photo', $storage); //photo : name de votre input
 
     $file->addValidations(array(
-      // new \Upload\Validation\Mimetype('image/jpg'),
-      new \Upload\Validation\Mimetype('image/png'),
-      // new \Upload\Validation\Size('10M')
+      new \Upload\Validation\Size('10M')
     ));
 
     $data = array(
@@ -51,6 +50,7 @@ class Output
     // Try to upload file
     try {
       $file->upload();
+
       return $data;
     } catch (\Exception $e) {
       $errors = $file->getErrors();
