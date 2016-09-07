@@ -2,6 +2,9 @@
 
 class User {
 
+use FormattageTrait;
+
+
 
 protected $id;
 protected $nom;
@@ -63,7 +66,7 @@ public function getEmail()
 public function getPassword()
 {
   return $this->password;
-}
+}$obj
 public function getVille()
 {
   return $this->ville;
@@ -98,7 +101,6 @@ public function add() {
      "date_naissance"=>$this->dateNaissance,
      "date_creation"=>$this->inscription->format('Y-m-d H:i:s')));
 
-     var_dump($resultat);
 
      $comment = new Comment('Utilisateur Ajouté', 5, 1,$this->bdd);
      $comment->insertComment($this->getLastUser());

@@ -1,8 +1,7 @@
 <?php
 
-   class Categorie {
+   class Categorie extends Contenu {
 
-      protected $titre;
       protected $description;
 
       public function __construct($titre, $description){

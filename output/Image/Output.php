@@ -6,12 +6,21 @@ namespace Image;
 use Intervention\Image\ImageManager;
 use  \Upload\Storage\FileSystem;
 
-
 /**
  *
  */
 class Output
 {
+
+  const MIMETYPE="image/jpg";
+
+  protected static $mimeTypes = [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+  ];
+
+
 
   public function render($image)
   {
@@ -35,6 +44,7 @@ class Output
     $file = new \Upload\File('photo', $storage); //photo : name de votre input
 
     $file->addValidations(array(
+      new \Upload\Validation\Mimetype(self::MIMETYPE),
       new \Upload\Validation\Size('10M')
     ));
 

@@ -1,10 +1,9 @@
 <?php
 
-class Article {
+class Article extends Contenu{
 
   protected $categorie_id;
   protected $user_id;
-  protected $titre;
   protected $resume;
   protected $description;
   protected $image;
