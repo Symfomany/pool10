@@ -9,6 +9,7 @@ class ComposerStaticInit9adabcc7f87283bf1dc9f904ac66402e
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -28,7 +29,16 @@ class ComposerStaticInit9adabcc7f87283bf1dc9f904ac66402e
         ),
         'P' => 
         array (
+            'Psr\\Http\\Message\\' => 17,
             'Patchwork\\' => 10,
+        ),
+        'I' => 
+        array (
+            'Intervention\\Image\\' => 19,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
         ),
         'D' => 
         array (
@@ -62,9 +72,21 @@ class ComposerStaticInit9adabcc7f87283bf1dc9f904ac66402e
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Patchwork\\' => 
         array (
             0 => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork',
+        ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
         'Dompdf\\' => 
         array (
@@ -81,6 +103,13 @@ class ComposerStaticInit9adabcc7f87283bf1dc9f904ac66402e
     );
 
     public static $prefixesPsr0 = array (
+        'U' => 
+        array (
+            'Upload' => 
+            array (
+                0 => __DIR__ . '/..' . '/codeguy/upload/src',
+            ),
+        ),
         'S' => 
         array (
             'Svg\\' => 

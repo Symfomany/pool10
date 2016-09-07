@@ -4,6 +4,8 @@
     },
     "require": {
         "dompdf/dompdf": "^0.7.0",
-        "phpoffice/phpexcel": "^1.8"
+        "phpoffice/phpexcel": "^1.8",
+        "intervention/image": "^2.3",
+        "codeguy/upload": "^1.3"
     }
 }
